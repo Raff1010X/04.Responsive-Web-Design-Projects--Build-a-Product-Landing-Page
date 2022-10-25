@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="48px"
+   height="48px"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="hamburger.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="18.020833"
+     inkscape:cx="24"
+     inkscape:cy="23.944509"
+     inkscape:window-width="1920"
+     inkscape:window-height="1054"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <title
+     id="title2">70 Basic icons by Xicons.co</title>
+  <path
+     d="M41,14H7a2,2,0,0,1,0-4H41A2,2,0,0,1,41,14Z"
+     fill="#6f7380"
+     id="path4" />
+  <path
+     d="M41,26H7a2,2,0,0,1,0-4H41A2,2,0,0,1,41,26Z"
+     fill="#6f7380"
+     id="path6" />
+  <path
+     d="M41,38H7a2,2,0,0,1,0-4H41A2,2,0,0,1,41,38Z"
+     fill="#6f7380"
+     id="path8" />
+  <path
+     style="fill:#800080;stroke:none;stroke-width:0.0554913"
+     d="M 6.6718059,25.940123 C 6.061483,25.837458 5.5169147,25.423035 5.232097,24.844489 5.0690583,24.51331 5.049711,24.423727 5.049711,24 c 0,-0.423727 0.019347,-0.51331 0.182386,-0.844489 0.2957802,-0.600814 0.8234184,-0.990117 1.4898752,-1.099262 0.4421063,-0.0724 34.1139498,-0.0724 34.5560558,0 0.666457,0.109145 1.194095,0.498448 1.489875,1.099262 0.163438,0.33199 0.182261,0.419603 0.181185,0.843322 -9.99e-4,0.394078 -0.02585,0.525863 -0.14917,0.79113 -0.282769,0.608246 -0.859209,1.045262 -1.52189,1.153788 -0.398694,0.06529 -34.2175754,0.06175 -34.6062221,-0.0036 z"
+     id="path71" />
+  <path
+     style="fill:#800080;stroke:none;stroke-width:0.0554913"
+     d="M 6.5163107,37.908161 C 5.4719905,37.625664 4.815149,36.511508 5.1028583,35.510617 5.2887815,34.863822 5.6758899,34.428079 6.2883657,34.176167 L 6.6034682,34.046565 H 24 41.396532 l 0.315102,0.129602 c 0.612476,0.251912 0.999584,0.687655 1.185508,1.33445 0.251677,0.875542 -0.204746,1.835964 -1.076451,2.265109 l -0.366324,0.180343 -17.342212,0.01035 c -13.624798,0.0081 -17.3965804,-0.0044 -17.5958443,-0.05826 z"
+     id="path147" />
+  <path
+     style="fill:#800080;stroke:none;stroke-width:0.0554913"
+     d="M 6.2883657,13.823833 C 5.6758899,13.571921 5.2887815,13.136178 5.1028583,12.489383 4.8471236,11.599726 5.3319722,10.613972 6.2330555,10.19156 l 0.3149214,-0.147629 h 17.4531901 17.45319 l 0.366329,0.180343 c 0.871709,0.429141 1.328134,1.389564 1.076456,2.265109 -0.185924,0.646795 -0.573032,1.082538 -1.185508,1.33445 l -0.315102,0.129602 H 24 6.6034682 Z"
+     id="path223" />
+</svg>

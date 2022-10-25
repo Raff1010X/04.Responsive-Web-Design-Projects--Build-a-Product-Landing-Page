@@ -1,0 +1,742 @@
+:root
+  touch-action: pan-x pan-y
+  height: 100%
+//_____________________________________________________________________ IMAGES
+$picture-bg1: './1.webp'
+$picture-bg2: './2.webp'
+$picture-bg3: './3.webp'
+$picture-bg4: './4.webp'
+$picture-bg5: './5.webp'
+$picture-bg7: './7.webp'
+$picture-logo-white: './logo-white.svg'
+$picture-logo: './logo.svg'
+$picture-hamburger: './hamburger.svg'
+$picture-fruits: './fruits.svg'
+$picture-flour: './flour.svg'
+$picture-eggs: './eggs.svg'
+
+//_____________________________________________________________________ COLORS
+$color: #ffffff
+$color99: #ffffff99
+$color-main: #800080
+$color-main70: #80008070
+$color-main50: #80008050
+$color-main-highlight: #ff00ff
+$color-black: #000000
+$color-black25: #00000025
+$color-black60: #00000060
+
+//____________________________________________________________________ FONTS   
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Montserrat:wght@400&display=swap')
+
+@mixin font($fontFamyly: "Mons", $fontSize: 1.3rem, $fontColor: $color-main, $backgroundColor: $color, $hoverBack: none, $hoverColor: none)
+    color: $fontColor
+    background-color: $backgroundColor
+    font-size: $fontSize
+    @if $fontFamyly == "Mons" 
+        font-family: 'Montserrat', sans-serif
+    @else if $fontFamyly == "Lora"
+        font-family: 'Lora', serif
+    @if $hoverBack != none
+        &:hover
+            background-color: $hoverBack
+    @if $hoverColor != none
+        &:hover
+            color: $hoverColor
+    text-decoration: none
+
+$font-size-phone: 3vw
+$font-size-tablet: 2vw
+$font-size-landscape: 1.3vw
+$font-size-desktop: 1.3vw
+$font-size-desktop-large: 17px
+
+//____________________________________________________________________ MEDIA QUERIES SIZES
+$width-phone: 650px
+$width-tablet: 1100px
+$width-desktop: 1400px
+
+//____________________________________________________________________ GENERIC CONTAINERS
+
+$height-header: 4.5rem
+
+@mixin genericContainer($margin: (0 0 0 0), $padding: (0 0 0 0), $border: 0, $radius: (0 0 0 0), $width: 0, $height: 0, $min-width: 0, $min-height: 0, $position: 0, $top: 0, $right: 0, $bottom: 0, $left: 0)
+    @if $margin != (0 0 0 0) and $margin != 0 
+        margin: $margin     
+    @if $padding != (0 0 0 0) and $padding != 0 
+        padding: $padding
+    @if $border != 0
+        border: $border 1px solid
+    @else 
+        border: 0
+    @if $radius != (0 0 0 0) and $radius != 0 
+        border-radius: $radius
+    @if $width != 0
+        width: $width
+    @if $height != 0
+        height: $height
+    @if $min-width != 0
+        min-width: $min-width
+    @if $min-height != 0
+        min-height: $min-height
+    @if $position != 0
+        position: $position
+    @if $top != 0
+        top: $top
+    @if $left != 0
+        left: $left
+    @if $right != 0
+        right: $right
+    @if $bottom != 0
+        bottom: $bottom
+
+@mixin genericContainerFlex($flex-direction, $justify-content, $align-items, $align-content, $flex-wrap)
+    display: flex
+    @if $flex-direction != 0
+        flex-direction: $flex-direction
+    @if $justify-content != 0
+        justify-content: $justify-content
+    @if $align-items != 0
+        align-items: $align-items
+    @if $align-content != 0
+        align-content: $align-content
+    @if $flex-wrap != 0
+        flex-wrap: $flex-wrap
+
+//_____________________________________________________________________ BUTTONS
+@mixin button()
+    @include font(Lora, 1.3rem, $color, $color-main, $color-main-highlight)
+    @include genericContainer($radius: .2rem, $width: 20rem, $min-width: 4rem, $min-height: 4rem)
+    cursor: pointer
+    transition: 0.5s
+
+//_____________________________________________________________________ INPUTS
+@mixin inputBox()
+    @include font(Mons, 1.3rem, $color-main, $color)
+    @include genericContainer($margin: 1rem, $padding: .5rem, $border: $color-main, $radius: .2rem, $width: 20rem)
+    transition: 0.5s
+    &:hover
+        border: 1px solid $color-main
+
+//_____________________________________________________________________ BACKGROUND
+@mixin background()
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center right
+
+//_____________________________________________________________________ PRICING GRID
+@mixin grid_role()
+    #product1
+        grid-area: product1
+    #product2
+        grid-area: product2
+    #product3
+        grid-area: product3
+    #product4
+        grid-area: product4
+    #expand
+        grid-area: expand
+
+@mixin grid_3()
+    position: relative
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-template-areas: "expand product1 product2" "expand product3 product4"
+    grid-gap: 3rem
+    padding: 3rem
+    height: auto
+    min-height: calc(100vh - #{$height-header})
+    @include grid_role()
+
+@mixin grid_2()      
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(3, 1fr)
+    grid-template-areas: "expand product1" "expand product2" "product3 product4"
+    @include grid_role()
+
+@mixin grid_2LAND()      
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(3, 1fr)
+    grid-template-areas: "expand expand" "product1 product2" "product3 product4"
+    @include grid_role()
+
+@mixin grid_1()
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(5, 1fr)
+    grid-template-areas: "expand" "product1" "product2" "product3" "product4"
+    @include grid_role()
+
+//____________________________________________________________________________________________________ ALL, HTML, BODY
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html
+    @include font(Mons, $font-size-desktop-large, $color-main, $color)
+    scroll-behavior: smooth
+    height: 100%
+    overflow-x: hidden
+    
+body
+    padding-top: 80px
+    height: 100%
+
+//_____________________________________________________________________ HEADER NAVBAR
+header
+    @include genericContainer($width: 100vw, $height: $height-header, $position: fixed, $top: 0.00000001px)
+    background-color: $color
+    @include genericContainerFlex(row, space-between, center, 0, nowrap)
+    box-shadow: 0 20px 120px 20px $color-black25
+    z-index: 200
+    a
+        @include font(Mons, inherit, $color-black, $color, none, $color-main)
+        white-space: nowrap
+
+    #logo-text
+        @include genericContainerFlex(row, 0, center, 0, nowrap)
+        @include font(Lora, 1.6rem, $color-main, $color)
+        @include genericContainer($width: 200px, $height: $height-header)
+        z-index: 200
+
+    #header-img
+        @include genericContainer($margin: (-1.1rem 0 0 1.5rem), $width: 3rem, $height: 3rem)
+        content: url($picture-logo)
+
+    #nav-bar
+        @include genericContainerFlex(row, 0, 0, 0, nowrap)
+        z-index: 0
+        #nav-bar-menu
+            @include genericContainerFlex(row, 0, 0, 0, nowrap)
+        .nav-item
+            list-style-type: none
+            margin: 1rem
+        #search
+            color: $color-main
+            cursor: pointer
+            &:hover
+                color: $color-black
+  
+    #header-cart
+        @include genericContainerFlex(row, space-between, center, 0, nowrap)
+        @include genericContainer($margin: (0 2rem 0 0), $min-width: 10rem, $min-height: $height-header)
+        a
+            margin: .66rem
+
+#menu
+    position: absolute
+    visibility: hidden   
+
+.active
+    color: $color-main
+    text-decoration: overline
+
+//_____________________________________________________________________ BACKGROUND VIDEO
+#bg-video
+    @include genericContainer($width: 100%, $height: 100%, $position: fixed, $top: $height-header)
+    @include genericContainerFlex(0, center, center, 0, 0)
+    overflow: hidden
+    z-index: -1
+    #video
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: .5s
+        z-index: -1   
+
+//_____________________________________________________________________ WRAPPERS
+.wrapper
+    width: 100%
+    height: 100%
+    z-index: 100
+
+    .fixed
+        @include background()
+        width: 100%
+        height: auto
+        z-index: 100
+        color: $color
+
+    .content
+        height: calc(100vh - #{$height-header})
+        @include genericContainerFlex(column, center, center, 0, 0)
+
+    .cake
+        height: 75%
+        @include genericContainerFlex(column, flex-end, 0, 0, 0)
+        background-position: center center
+        transition: .5s
+        div
+            @include font(Lora, 1.6rem, 0, $color-main50, 0, 0)
+            @include genericContainerFlex(row, 0, center, 0, 0)
+            @include genericContainer($padding: (1rem 1.5rem 1rem 1rem), $radius: (0 2rem 0 0), $width: fit-content, $height: 4.45rem)
+            img
+                height: 3rem
+                width: 3rem
+                margin-top: -1rem
+            p
+                white-space: nowrap
+
+    .bg-1
+        background-image: url($picture-bg1)
+    .bg-2
+        background-image: url($picture-bg2)
+    .bg-3
+        background-image: url($picture-bg3)
+    .bg-4
+        background-image: url($picture-bg4)
+    .bg-5
+        background-image: url($picture-bg5)
+
+    .bg-1a,
+    .bg-2a,
+    .bg-3a,
+    .bg-4a,
+    .bg-5a
+        background-image: url($picture-bg7)
+
+
+
+//_____________________________________________________________________ WELCOME PAGE
+#first-section
+    height: 100%
+    transition: 1s
+
+#welcome-div
+    @include genericContainerFlex(column, flex-end, flex-start, 0, 0)
+    height: 100%
+    padding: 5rem
+    h1
+        font-size: 2.5rem
+        margin-bottom: 3rem
+        text-shadow: 0 0 30px $color-black, 0 0 100px $color-black, 0 0 10px $color-main
+        transition: 1s
+    #logo-white
+        @include genericContainer($margin: (0 0 3rem 0), $width: 10rem, $height: 10rem, $position: relative)
+        filter: drop-shadow(0 0 30px $color-black60) drop-shadow(0 0 100px $color-black60) drop-shadow(0 0 10px $color-main70)
+        transition: 1s
+
+button
+    @include button
+
+.logo-white
+    content: url($picture-logo-white)
+
+
+//_____________________________________________________________________ BEST QUALITY
+.grid
+    display: flex
+.desc
+    @include genericContainerFlex(column, center, 0, 0, 0)
+    @include genericContainer($padding:  5px, $width: 50vw)
+    p, h2
+        @include font(0, 1.1rem, $color-main, $color99, 0, 0)
+        border-radius: 1rem
+        padding: .5rem
+    h2
+        margin-top: 1rem
+        font-size: 1.8rem
+.icon
+    @include genericContainerFlex(0, center, center, 0, 0)
+.desc-icon
+    height: 80px
+    margin-left: -12rem
+    box-shadow: inset 0 0 50px white
+    filter: brightness(1.75)
+.fruits
+    content: url($picture-fruits)
+.flour
+    content: url($picture-flour)
+.eggs
+    content: url($picture-eggs)
+
+
+
+//_____________________________________________________________________ PRICING
+#pricing
+    @include grid_3()
+.product // no mixins
+    @include genericContainer($margin: auto, $radius: (0 2rem 0 2rem), $width: 25vw, $height: 33vh, $position: relative)
+    background-size: cover
+    overflow: hidden
+    transition: .5s
+#expand
+    height: 76.5vh
+    .product-img
+        height: 76.5vh
+.level
+    text-shadow: 0 0 5px $color-main, 0 0 10px $color-black
+    box-shadow: 0 0 10px $color99
+    white-space: nowrap
+    @include genericContainer($padding: (.5rem .5rem .5rem 1rem), $width: 100%, $height: 2.8rem)
+    @include font(Lora, 1.3rem, $color, $color-main70, 0, 0)
+    img
+        @include genericContainer($margin: (0 .65rem 0 0), $height: 2rem, $position: relative, $top: -.35rem)
+        filter: drop-shadow(0 0 5px $color-main70) drop-shadow(0 0 10px $color-black60)
+    p
+        display: inline
+        position: relative
+        top: -.6rem
+
+$r: Max(2.5vw, 2.5vh)
+$rw: Max(8vw, 8vh)
+.product-img
+    width: 100%
+    height: 33vh
+    background-size: cover
+    background-position: center center
+    @include genericContainerFlex(column, space-between, 0, 0, 0)
+    box-shadow: inset 0 0 50px $color99
+    h2
+        @include font($fontSize: $r, $fontColor: $color-main, $backgroundColor: $color99)
+        @include genericContainer($margin: 0px, $padding: ($r 1rem 1rem 1rem), $radius: (0 $rw $rw $rw), $width: $rw, $height: $rw)
+        text-align: center
+        transform: rotate(-10deg) translate(0.8vw, .8vw)
+        box-shadow: 0 0 10px $color-black60
+.product-icons
+    @include genericContainerFlex(row, center, center, 0, 0 )
+    @include genericContainer($radius: (1.5rem 0 0 0), $width: 3rem, $height: 3rem)
+    align-self: flex-end
+    font-size: 1.1rem
+    background-color: $color-main70
+    box-shadow: 0 0 15px $color99
+    transition: 0.5s
+    filter: drop-shadow(0 0 5px $color-main70) drop-shadow(0 0 10px $color-black60)
+    a
+        color: $color
+        transition: 0.5s
+        &:hover
+            color: $color-main-highlight
+            transform: scale(1.1)
+            transition: 0.5s
+            text-shadow: 0 0 15px white
+
+
+//_____________________________________________________________________ CONTACT US
+#obout-us
+    position: relative
+    p
+        @include font(Mons, 2rem, $color-main, $color99, 0, 0)
+        border-radius: 0.5rem
+    #contact-header
+        font-family: 'Montserrat', sans-serif
+        @include genericContainer($margin: (1rem auto 0 auto),$padding: .5rem, $position: absolute, $top: 2rem)
+        z-index: 100
+    #obout-wrap
+        @include genericContainerFlex(row, space-evenly, center, 0, nowrap)
+        width: 100%
+        #contact-info
+            @include genericContainer($margin: (3rem 0 0 0), $padding:  1rem, $width:  40vw,$height:  70vh)
+            @include genericContainerFlex(column, space-between, center, 0, 0)
+            @include font(Mons, 1rem, $color, 0, 0, 0)
+            font-style: normal
+            p
+                @include font(Mons, 0, $color-main, $color99, 0, 0)
+                border-radius: 0.5rem
+                padding-bottom: 1rem
+                align-self: flex-start
+                display: flex
+                align-items: center
+            p, a
+                font-size: 1.2rem
+                color: $color-main
+                margin: 0
+                padding: .5rem
+                text-decoration: none
+                transition: 0.5s
+            p:hover
+                transform: scale(1.1)
+                transition: 0.5s
+            i
+                font-size: 2rem
+                margin-right: 2rem
+            #pin
+                margin-left: 0.5rem
+
+            #map-frame
+                @include genericContainer($radius: 1rem, $width: 40vw, $height: 35.5vh)
+                @include genericContainerFlex(column, center, center, 0, 0)
+                overflow: hidden
+                #map
+                    @include genericContainer($width: 100%, $height: 100%)
+                    object-fit: cover
+                    object-position: center
+        #contact-form
+            @include genericContainerFlex(column, space-between, center, 0, 0)
+            @include genericContainer($margin: (3rem 0 0 0),$padding: 1rem,$width: 40vw, $height: 70vh)
+            @include font(Mons, 1rem, $color, 0, 0, 0)
+
+label
+    @include font(Mons, 1.6rem, $color-main, 0 , 0, 0)
+    align-self: flex-start
+    margin-bottom: -0.5rem
+
+input[type=email], #message, #name
+    @include inputBox
+    width: 100%
+
+input[type=submit]
+    @include button
+    width: 100%
+
+
+//_____________________________________________________________________ SUBSCRIBE
+#subscribe
+    width: 100%
+    height: calc(100vh - #{$height-header})
+
+#subscribe-wrap
+    @include genericContainerFlex(column, space-around, center, 0, 0)
+    @include genericContainer($padding: (1rem 0 0 0), $width: 100%, $height: 100%, $position: relative)
+    color: $color-main
+    form, div
+        @include genericContainerFlex(column, center, center, 0, 0)
+    div
+        i
+            font-size: 5rem
+        p
+            @include genericContainer($padding: .5rem, $radius: 1rem)
+            @include font(Mons, 1.7rem, 0, $color99, 0, 0)           
+            text-align: center
+
+    #social-logo
+        @include genericContainerFlex(row, center, center, 0, 0)
+        .social-logo
+            color: $color-main
+            @include genericContainer($margin: (0 3.5rem 3rem 2.5rem), $height:  2.5rem, $width: 2.5rem)
+            cursor: pointer
+            transition: 0.5s
+            &:hover
+                transform: scale(1.2)
+                transition: 0.5s
+                color: $color-main-highlight
+        a
+            visibility: hidden
+            i
+                visibility: visible
+
+    #subscribe-img
+        position: absolute
+        align-self: flex-start
+        top: 20vh
+        opacity: 1
+        margin-left: calc(18vw - 8rem)
+        transition: 0.5s
+        &:hover
+            transform: scale(1.1)
+            transition: 0.5s
+        img
+            height: 14rem
+            width: 14rem
+        p
+            font-size: 2.5rem
+            font-family: 'lora', serif
+.logo
+    content: url($picture-logo)
+
+
+
+//_____________________________________________________________________ SCROLL
+::-webkit-scrollbar
+    width: 0.6rem
+
+::-webkit-scrollbar-track
+    background: #eebcee
+
+::-webkit-scrollbar-thumb
+    background: $color-main
+    border-radius: 0.3rem
+
+::-webkit-scrollbar-thumb:hover
+    background: $color-main
+
+
+//_____________________________________________________________________ MEDIA QUERIES
+
+@media (max-width: #{$width-desktop})
+    //___________________________ MEDIA QUERIES DESKTOP_____________________ ALL
+    html
+        font-size: $font-size-desktop
+
+
+@media (max-width: #{$width-tablet})
+    //___________________________ MEDIA QUERIES TABLET_____________________ ALL
+    html
+        scroll-behavior: initial
+        font-size: $font-size-tablet
+
+    //___________________________ MEDIA QUERIES TABLET_____________________ HEADER NAVBAR
+    header
+        height: $height-header // open menu 100%
+        background-image: url($picture-bg7)
+        @include background()
+        overflow: hidden
+        flex-direction: column !important
+        flex-wrap: wrap !important
+        justify-content: space-between !important
+
+    #nav-bar
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        flex-direction: column !important
+        flex-wrap: wrap !important
+        justify-content: space-between !important
+
+    #nav-bar-menu
+        flex-direction: column !important
+        flex-wrap: wrap !important
+        justify-content: space-between !important
+
+    #nav-bar, #header-cart
+        visibility: hidden // open menu visible
+        transition: 0.5s
+
+    #logo-text, #nav-bar
+        align-self: flex-start
+
+    #nav-bar
+        margin-left: 0.7rem
+        font-size: 1.3rem
+        .small
+            font-size: 1.3rem !important
+
+    #header-cart
+        position: absolute
+        top: calc(100vh - 5rem)
+        p , a
+            font-size: 1.5rem !important
+
+    #menu
+        visibility: visible
+        position: absolute
+        top: 0
+        align-self: flex-end
+        margin: 0.7rem
+        margin-right: 1rem
+        width: auto
+        height: auto
+        #hamburger-img
+            height: 3rem
+            content: url($picture-hamburger)
+
+    //___________________________ MEDIA QUERIES TABLET_____________________ WELCOME PAGE
+    #welcome-div
+        align-items: center !important
+        justify-content: space-around !important
+        padding: 0rem !important
+        h1
+            font-size: 2.3rem !important
+            margin-bottom: 0 !important
+            text-align: center !important
+            padding: 0 2rem 0 2rem !important
+
+        #logo-white
+            width: 8rem !important
+            height: 8rem !important
+            margin-bottom: 0 !important
+            margin-top: 15vh !important
+            left: 0 !important
+        button
+            margin-bottom: 2rem !important
+
+    //___________________________ MEDIA QUERIES TABLET_____________________ SUBSCRIBE
+    .social-logo
+        margin-right: 2.75rem !important
+        margin-left: 2.25rem !important
+
+    #subscribe-img
+        opacity: 0 !important
+        z-index: -1 !important
+
+    button
+        margin: 0 !important
+
+    //___________________________ MEDIA QUERIES TABLET_____________________ SCROLL
+    ::-webkit-scrollbar
+        visibility: hidden !important
+        width: 0 !important
+
+
+    //___________________________ MEDIA QUERIES TABLET_____________________ CONTACT US
+    #obout-us
+        flex-direction: column !important
+        height: calc(100vh - 4rem) !important
+        p 
+            margin-top: 2rem !important
+            padding-bottom: 0 !important
+            font-family: 'Lora', serif
+        #obout-wrap
+            height: 100%
+            display: flex
+            flex-direction: column !important
+            flex-wrap: wrap
+            justify-content: flex-start !important
+        #contact-header
+            top: 0  
+        #contact-info
+            width: 85% !important
+            height: 100% !important
+            p 
+                padding-top: 0 !important
+                font-family: 'Lora', serif
+        #contact-form
+            display: none !important
+        #map-frame
+            width: 80vw !important
+            height: 100% !important
+            margin: 2rem 0 4rem 0 !important
+
+
+    //___________________________ MEDIA QUERIES TABLET_____________________ PRICING
+    #pricing
+        @include grid_2()
+        
+    .product
+        width: 100%
+    .product-img
+        h2
+            font-size: 2.5rem
+            width: 7rem
+            height: 7rem
+            border-radius: 0 7rem 7rem 7rem
+            padding-top: 1.8rem
+            margin-left: .4rem
+    #expand
+        height: 100%
+        .product-img
+            height: 100%
+    //___________________________ MEDIA QUERIES TABLET_____________________ BEST QUALITY
+    .desc
+        width: 80vw
+        text-align: center
+        padding: 0
+    .icon
+        display: none
+    
+
+    //___________________________ MEDIA QUERIES TABLET_____________________ LANDSCAPE
+    @media (orientation: landscape)
+        html
+            font-size: $font-size-landscape !important
+        //___________________________ MEDIA QUERIES TABLET LANDSCAPE____________ OBOUT US
+        #contact-info
+            p 
+                margin-top: 0 !important
+
+@media (max-width: #{$width-phone})
+    //___________________________ MEDIA QUERIES PHONE_____________________ PRICING
+    html
+        font-size: $font-size-phone
+    #pricing
+        @include grid_1()
+    .product-img, .product
+        height: 40vh !important
+    @media (orientation: landscape)
+        #pricing
+            @include grid_2LAND()
+        .product-img, .product
+            height: 80vh !important

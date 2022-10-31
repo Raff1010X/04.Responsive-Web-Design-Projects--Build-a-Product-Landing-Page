@@ -836,7 +836,6 @@ input[type=submit]:hover {
   }
   #menu #hamburger-img {
     height: 3rem;
-    content: url("./hamburger.svg");
   }
   #welcome-div {
     align-items: center !important;

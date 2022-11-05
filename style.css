@@ -72,7 +72,7 @@ header #header-img {
   border: 0;
   width: 3rem;
   height: 3rem;
-  content: url("./logo.svg");
+  content: url("./images/logo.svg");
 }
 header #nav-bar {
   display: flex;
@@ -204,26 +204,26 @@ header #header-cart a {
   white-space: nowrap;
 }
 .wrapper .bg-1 {
-  background-image: url("./1.webp");
+  background-image: url("./images/1.webp");
 }
 .wrapper .bg-2 {
-  background-image: url("./2.webp");
+  background-image: url("./images/2.webp");
 }
 .wrapper .bg-3 {
-  background-image: url("./3.webp");
+  background-image: url("./images/3.webp");
 }
 .wrapper .bg-4 {
-  background-image: url("./4.webp");
+  background-image: url("./images/4.webp");
 }
 .wrapper .bg-5 {
-  background-image: url("./5.webp");
+  background-image: url("./images/5.webp");
 }
 .wrapper .bg-1a,
 .wrapper .bg-2a,
 .wrapper .bg-3a,
 .wrapper .bg-4a,
 .wrapper .bg-5a {
-  background-image: url("./7.webp");
+  background-image: url("./images/7.webp");
 }
 
 #first-section {
@@ -274,7 +274,7 @@ button:hover {
 }
 
 .logo-white {
-  content: url("./logo-white.svg");
+  content: url("./images/logo-white.svg");
 }
 
 .grid {
@@ -322,15 +322,15 @@ button:hover {
 }
 
 .fruits {
-  content: url("./fruits.svg");
+  content: url("./images/fruits.svg");
 }
 
 .flour {
-  content: url("./flour.svg");
+  content: url("./images/flour.svg");
 }
 
 .eggs {
-  content: url("./eggs.svg");
+  content: url("./images/eggs.svg");
 }
 
 #pricing {
@@ -748,7 +748,7 @@ input[type=submit]:hover {
 }
 
 .logo {
-  content: url("./logo.svg");
+  content: url("./images/logo.svg");
 }
 
 ::-webkit-scrollbar {
@@ -780,7 +780,7 @@ input[type=submit]:hover {
   }
   header {
     height: 4.5rem;
-    background-image: url("./7.webp");
+    background-image: url("./images/7.webp");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

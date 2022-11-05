@@ -25,7 +25,7 @@ function showMenu() {
     header.style.height = "100%";
     cart.style.visibility = "visible";
     nav.style.visibility = "visible";
-    hamburger.src = "hamburgerx.svg"
+    hamburger.src = "./images/hamburgerx.svg"
     isMenuOpen = true;
 }
 
@@ -33,7 +33,7 @@ function hideMenu() {
     header.style.height = "4.5rem";
     cart.style.visibility = "hidden";
     nav.style.visibility = "hidden";
-    hamburger.src = "hamburger.svg"
+    hamburger.src = "./images/hamburger.svg"
     isMenuOpen = false;
 }
 

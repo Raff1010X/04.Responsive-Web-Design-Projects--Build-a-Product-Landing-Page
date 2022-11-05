@@ -29,12 +29,12 @@ My git repo: https://github.com/Raff1010X/01.Roadmap
 
 ##
 <p align="center">
-<img src="./images/5.png" alt="example image" width="50%">
+<img src="./images/5.png" alt="example image" width="100%">
 </p>
 
 ##
 <p align="center">
-<img src="./images/6.png" alt="example image" width="100%">
+<img src="./images/6.png" alt="example image" width="50%">
 </p>
 
 ##
